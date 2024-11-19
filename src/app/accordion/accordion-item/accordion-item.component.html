@@ -1,0 +1,16 @@
+<div class="accordion-item">
+    <div class="accordion-head" (click)="onExpandChange()">
+        <h3 class="title">{{ title }}</h3>
+        <ng-container *ngIf="!isExpanded; else dropUpIcon">
+            <span class="material-icons-outlined">arrow_drop_down</span>
+        </ng-container>
+
+        <ng-template #dropUpIcon>
+            <span class="material-icons-outlined">arrow_drop_up</span>
+        </ng-template>
+    </div>
+
+    <div *ngIf="isExpanded" class="accordion-body">
+        <div class="description">{{ description }}</div>
+    </div>
+</div>

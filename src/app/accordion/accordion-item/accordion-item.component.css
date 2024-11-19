@@ -1,0 +1,16 @@
+.accordion-item {
+    min-height: 2rem;
+    cursor: pointer;
+    padding: 0 1rem;
+}
+
+.accordion-head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion-body {
+    padding-bottom: 0.5rem;
+}

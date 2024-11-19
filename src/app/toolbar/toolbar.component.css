@@ -1,0 +1,20 @@
+.toolbar-container {
+    width: 100%;
+    height: 4rem;
+}
+
+.toolbar-background {
+    height: inherit;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
+    border-radius: 2rem;
+}
+
+.toolbar-section {
+    height: 100%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

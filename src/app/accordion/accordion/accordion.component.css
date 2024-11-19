@@ -1,0 +1,14 @@
+.accordion-container {
+    max-width: 50%;
+    border: 3px solid navy;
+    border-radius: 2rem;
+    box-sizing: border-box;
+}
+
+app-accordion-item:not(:last-child) {
+    display: block;
+}
+
+app-accordion-item:not(:last-child) {
+    border-bottom: 1px solid navy;
+}
