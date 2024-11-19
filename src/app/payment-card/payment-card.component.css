@@ -1,0 +1,177 @@
+.payment-card-container {
+    width: 100%;
+    display: flex;
+    margin: 2rem;
+    justify-content: center;
+    color: #B6A470;
+}
+
+.payment-card-container > .card-container {
+    position: relative;
+    width: 580px;
+}
+
+.side {
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 500px;
+    height: 320px;
+    padding: 20px 50px;
+}
+
+.front-side-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+    background-image: url("/assets/payment-card-images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 500px 320px;
+    z-index: 2;
+}
+
+.back-side-container {
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    border-radius: 30px;
+    background: rgb(2,0,36);
+    background: linear-gradient(130deg, rgba(2,0,36,1) 0%, rgba(54,54,126,1) 43%, rgba(77,67,83,1) 100%);
+    z-index: 1;
+}
+
+.bank-name-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bank-name {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.chip-container {
+    padding-top: 15%;
+    width: fit-content;
+}
+
+.chip-container > img {
+    width: 75px;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    color: #B6A470;
+}
+
+.card-number-container > input {
+    font-size: 2rem;
+}
+
+.card-number-container > input.invalid {
+    border: 1px solid red;
+}
+
+.expiration-date-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.expiration-date-container > label {
+    width: 3rem;
+    text-wrap: wrap;
+}
+
+.cvv-container input,
+.cardholder-name-container input,
+.expiration-date-container input {
+    font-size: 1.5rem;
+}
+
+.expiration-date-container span {
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.expiration-date-container #month-expired {
+    width: 2.5rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus{
+    outline: none;
+}
+
+.inline-data-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-type-container img {
+    width: 75px;
+}
+
+.magnetic-strip-container {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 500px;
+    height: 50px;
+    background-color: #000;
+
+}
+
+.back-side-container > .inline-data-container {
+    padding-top: 30%;
+}
+
+#signature {
+    height: 2rem;
+    background-color: #63615a;
+    color: #000;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.cvv-container {
+    width: 4rem;
+}
+
+.error-container {
+    position: relative;
+    border: 1px solid red;
+    height: 39px;
+}
+
+.error-message {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #000;
+    color: red;
+    font-size: 1rem;
+}
+
+.dates {
+    display: flex;
+    flex-direction: row;
+}
+
+.disable {
+    z-index: 1;
+    opacity: 0.8;
+    pointer-events: none;
+}

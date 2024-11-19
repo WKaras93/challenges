@@ -1,0 +1,7 @@
+<div *ngIf="isVisible" class="active-index-container">
+    <div class="indexes">
+        <div *ngFor="let index of indexes" class="index-item-container" [ngClass]="{'item-selected' : isItemSelected(index)}">
+            <span>{{ index }}</span>
+        </div>
+    </div>
+</div>

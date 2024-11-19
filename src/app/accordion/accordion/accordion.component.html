@@ -1,0 +1,13 @@
+<div class="accordion-container">
+    <ng-container>
+        <app-active-index [isVisible]="showActiveIndex"></app-active-index>
+    </ng-container>
+
+    <ng-container *ngFor="let item of accordionItems; index as i">
+        <app-accordion-item
+            [id]="i"
+            [title]="item.title"
+            [description]="item.description"
+        ></app-accordion-item>
+    </ng-container>
+</div>

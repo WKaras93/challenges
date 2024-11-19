@@ -1,0 +1,111 @@
+<div class="payment-card-container">
+    <div class="card-container">
+        <form [formGroup]="creditCardForm">
+            <div
+                class="front-side-container side"
+                (click)="switchSide($event)"
+                [ngClass]="{'disable' : isBackSideVisible}"
+                >
+                <div class="bank-name-container">
+                    <div class="bank-name">
+                        {{bankName | uppercase}}
+                    </div>
+                </div>
+
+            <div class="chip-container">
+                <img src="../assets/payment-card-images/chip.png" alt="">
+            </div>
+
+            <div class="card-number-container" [ngClass]="{'error-container': displayErrorMessage('number')}">
+                <input
+                id="number"
+                type="number"
+                autocomplete="cc-number"
+                placeholder="xxxx xxxx xxxx xxxx"
+                required
+                [formControl]="creditCardForm.controls['number']"
+                />
+                <div class="error-message" *ngIf="displayErrorMessage('number')">
+                    {{ getErrorMessage('number') }}
+                </div>
+            </div>
+
+            <div class="expiration-date-container" [ngClass]="{'error-container': displayErrorMessage('date')}">
+                <label>{{'Valid thru' | uppercase}}</label>
+                <div class="dates">
+                    <input
+                    id="month-expired"
+                    type="number"
+                    placeholder="MM"
+                    [formControl]="creditCardForm.controls['month']"
+                    />
+
+                    <span>/</span>
+
+                    <input
+                    id="year-expired"
+                    type="number"
+                    placeholder="YYYY"
+                    [formControl]="creditCardForm.controls['year']"
+                    />
+
+                    <div class="error-message" *ngIf="displayErrorMessage('date')">
+                        {{ getErrorMessage('date') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="inline-data-container">
+                <div class="cardholder-name-container" [ngClass]="{'error-container': displayErrorMessage('name')}">
+                    <input
+                    id="name"
+                    type="text"
+                    placeholder="Name Surname"
+                    [formControl]="creditCardForm.controls['name']"
+                    >
+
+                    <div class="error-message" *ngIf="displayErrorMessage('name')">
+                        {{ getErrorMessage('name') }}
+                    </div>
+                </div>
+
+                <div class="card-type-container">
+                    <img src="{{ getCardLogo() }}" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <div
+            class="back-side-container side"
+            (click)="switchSide($event)"
+            [ngClass]="{'disable' : isFrontSideVisible}"
+            >
+            <div class="magnetic-strip-container"></div>
+
+            <div class="inline-data-container">
+                <div class="signature-container">
+                    <label>{{'authorized signature' | uppercase}}</label>
+                    <div id="signature">
+                        {{ this.getName() | titlecase }}
+                    </div>
+                </div>
+
+                <div class="cvv-container" [ngClass]="{'error-container': displayErrorMessage('cvv')}">
+                    <input
+                    id="cvv"
+                    type="number"
+                    placeholder="CVV"
+                    [formControl]="creditCardForm.controls['cvv']"
+                    >
+
+                    <div class="error-message" *ngIf="displayErrorMessage('cvv')">
+                        {{ getErrorMessage('cvv') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="hologram-container"></div>
+        </div>
+    </form>
+    </div>
+</div>
