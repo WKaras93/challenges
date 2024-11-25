@@ -1,0 +1,14 @@
+<div
+    class="star-rating-container"
+    (mouseover)="onContainerFocus()"
+    (mouseout)="onContainerBlur()"
+    >
+    <ng-container *ngIf="showVotingBoard; else currentMarkBoard">
+        
+    </ng-container>
+
+
+    <ng-template #currentMarkBoard>
+        <div *ngFor="let star of stars" class="material-icons-outlined">{{ getStarSymbol(star) }}</div>
+    </ng-template>
+</div>

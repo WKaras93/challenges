@@ -1,0 +1,17 @@
+.star-rating-container {
+    display: flex;
+    flex-direction: row;
+    background-color: gray;
+}
+
+.star-rating-container:hover .rating {
+    color: #d9be26;
+}
+
+.star-rating-container:hover .rating:hover ~ .rating {
+    color: #5e5e5e;
+}
+
+.star-rating-container .rating {
+    color: #5e5e5e;
+}
