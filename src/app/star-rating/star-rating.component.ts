@@ -9,9 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class StarRatingComponent implements OnInit {
   
   @Input() showRatingValue = false;
-  @Input() votesNumber = 34000;
+  @Input() votesNumber = 0;
   @Input() starNumber = 5;
-  @Input() currentRate = 2.5;
+  @Input() currentRate = 0;
 
   stars: number[] = [];
   showVotingBoard = false;
@@ -24,7 +24,7 @@ export class StarRatingComponent implements OnInit {
     starIndex += 1;
     if (starIndex <= this.currentRate) {
       return 'star';
-    } else if (starIndex - this.currentRate >= 0.5 && starIndex - this.currentRate < 1) {
+    } else if (starIndex - this.currentRate <= 0.5) {
       return 'star_half';
     }
 
