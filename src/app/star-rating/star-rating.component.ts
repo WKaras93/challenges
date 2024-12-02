@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class StarRatingComponent implements OnInit {
   
   @Input() showRatingValue = false;
-  @Input() votesNumber = 0;
+  @Input() votesNumber = 34000;
   @Input() starNumber = 5;
   @Input() currentRate = 2.5;
 
@@ -32,13 +32,18 @@ export class StarRatingComponent implements OnInit {
   }
 
   public onContainerFocus() {
-    console.log('onContainerFocus')
     this.showVotingBoard = true;
   }
 
   public onContainerBlur() {
-    console.log('onBlur')
     this.showVotingBoard = false;
+  }
+
+  public getReviewsNumber(): string {
+    if (this.votesNumber > 1000) {
+      return `${Math.floor(this.votesNumber / 1000)}k+ revs`
+    }
+    return `${this.votesNumber} revs`
   }
 
   private createStars(): void {

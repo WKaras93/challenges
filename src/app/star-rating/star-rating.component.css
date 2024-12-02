@@ -1,17 +1,47 @@
 .star-rating-container {
     display: flex;
     flex-direction: row;
-    background-color: gray;
+    align-items: center;
 }
 
-.star-rating-container:hover .rating {
+.rating-data {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    background-color: #d9be26;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    text-align: center;
+}
+
+.rate-mark {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.rates-info {
+    font-size: 12px;
+}
+
+.rating-container {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: gray;
+    width: fit-content;
+    height: fit-content;
+}
+
+.rating-container:hover .rating {
     color: #d9be26;
 }
 
-.star-rating-container:hover .rating:hover ~ .rating {
+.rating-container:hover .rating:hover ~ .rating {
     color: #5e5e5e;
 }
 
-.star-rating-container .rating {
+.rating-container .rating {
     color: #5e5e5e;
 }

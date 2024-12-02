@@ -9,6 +9,7 @@
 .payment-card-container > .card-container {
     position: relative;
     width: 580px;
+    height: 400px;
 }
 
 .side {

@@ -1,14 +1,22 @@
-<div
-    class="star-rating-container"
-    (mouseover)="onContainerFocus()"
-    (mouseout)="onContainerBlur()"
-    >
-    <ng-container *ngIf="showVotingBoard; else currentMarkBoard">
-        
-    </ng-container>
-
-
-    <ng-template #currentMarkBoard>
-        <div *ngFor="let star of stars" class="material-icons-outlined">{{ getStarSymbol(star) }}</div>
-    </ng-template>
+<div class="star-rating-container">
+    <div class="rating-data">
+        <div class="rate-mark">{{ currentRate }}</div>
+    
+        <div class="rates-info">{{ getReviewsNumber() }}</div>
+    </div>
+    
+    <div
+        class="rating-container"
+        (mouseover)="onContainerFocus()"
+        (mouseout)="onContainerBlur()"
+        >
+        <ng-container *ngIf="showVotingBoard; else currentMarkBoard">
+            <div *ngFor="let star of stars" class="material-icons-outlined rating">star</div>
+        </ng-container>
+    
+    
+        <ng-template #currentMarkBoard>
+            <div *ngFor="let star of stars" class="material-icons-outlined">{{ getStarSymbol(star) }}</div>
+        </ng-template>
+    </div>
 </div>
