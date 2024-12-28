@@ -11,17 +11,21 @@ import { AccordionItemComponent } from './accordion/accordion-item/accordion-ite
 import { ActiveIndexComponent } from './accordion/active-index/active-index.component';
 import { PaymentCardComponent } from './payment-card/payment-card.component';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StarRatingComponent } from './star-rating/star-rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
     ExampleComponent,
     AccordionComponent,
     AccordionItemComponent,
     ActiveIndexComponent,
-    PaymentCardComponent
+    PaymentCardComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,8 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
       {path: 'toolbar', component: ToolbarComponent},
       {path: 'example', component: ExampleComponent},
     ]),
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
